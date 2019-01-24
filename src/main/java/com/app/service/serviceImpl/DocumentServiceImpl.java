@@ -43,8 +43,9 @@ public class DocumentServiceImpl implements DocumentService {
         }
     }
 
-    private IncomeData sendRequest(RequestUrl url) {
-        String response = requestSender.sendRequest(url.getUrl());
+
+    public IncomeData sendRequest(RequestUrl url) {
+        String response = requestSender.send(url.getUrl());
 
         LOGGER.info("response: {}", response);
         try {

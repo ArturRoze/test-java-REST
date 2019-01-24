@@ -20,7 +20,7 @@ public class HttpRequestSenderImpl implements RequestSender {
         this.httpClient = httpClient;
     }
 
-    public String sendRequest(String url) {
+    public String send(String url) {
         Request request = new Request.Builder()
                 .url(url)
                 .addHeader("Content-Type", "application/json")
