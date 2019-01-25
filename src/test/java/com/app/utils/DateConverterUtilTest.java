@@ -11,12 +11,11 @@ import static org.junit.Assert.assertEquals;
 @RunWith(MockitoJUnitRunner.class)
 public class DateConverterUtilTest {
 
-
     @Test
     public void convertStringDateToTimestamp() {
 
         //arrange
-        String stringDate = "2018-09-19 13:12:21.136263";
+        String stringDate = "2018-09-19T13:12:21.136263+03:00";
 
         //action
         Timestamp timestamp = DateConverterUtil.convertStringDateToTimestamp(stringDate);
