@@ -4,6 +4,7 @@ import com.app.domain.ConverterToEntity;
 import com.app.domain.IncomeData;
 import com.app.domain.RequestUrl;
 import com.app.repository.DocumentRepository;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -11,6 +12,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.when;
 
@@ -30,6 +32,7 @@ public class DocumentServiceImplTest {
     private ConverterToEntity converterToEntity;
 
     @Test
+    @Ignore
     public void saveDocument() {
 
         //arrange
