@@ -2,11 +2,9 @@ package com.app.domain;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.junit.Assert.*;
-
-@RunWith(SpringRunner.class)
+@RunWith(MockitoJUnitRunner.class)
 public class ConverterToEntityTest {
 
     @Test
@@ -15,15 +13,11 @@ public class ConverterToEntityTest {
         //arrange
 
 
-
         //action
-
 
 
         //assert
 
 
-
     }
-
 }

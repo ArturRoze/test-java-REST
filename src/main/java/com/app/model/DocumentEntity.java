@@ -40,14 +40,14 @@ public class DocumentEntity {
     private String documentOf;
 
     @Column(name = "datePublished")
-    @Type(type="timestamp")
+    @Type(type = "timestamp")
     private Timestamp datePublished;
 
     @Column(name = "documentType")
     private String documentType;
 
     @Column(name = "dateModified")
-    @Type(type="timestamp")
+    @Type(type = "timestamp")
     private Timestamp dateModified;
 
     @Column(name = "relatedItem")

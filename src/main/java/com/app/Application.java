@@ -13,7 +13,7 @@ public class Application {
     }
 
     @Bean
-    public OkHttpClient okHttpClient(){
+    public OkHttpClient okHttpClient() {
         return new OkHttpClient();
     }
 }

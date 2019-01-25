@@ -25,8 +25,6 @@ public class RequestController {
     public ResponseEntity<Void> saveOrUpdate(@RequestBody RequestUrl url){
         LOGGER.info("income url: {}", url);
         documentService.saveDocument(url);
-
-
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

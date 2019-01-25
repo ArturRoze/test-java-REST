@@ -24,14 +24,13 @@ public class DocumentServiceImpl implements DocumentService {
     private final DocumentRepository documentRepository;
     private final ConverterToEntity converterToEntity;
     private final RequestSender requestSender;
-    private final ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Autowired
-    public DocumentServiceImpl(DocumentRepository documentRepository, ConverterToEntity converterToEntity, RequestSender requestSender, ObjectMapper objectMapper) {
+    public DocumentServiceImpl(DocumentRepository documentRepository, ConverterToEntity converterToEntity, RequestSender requestSender) {
         this.documentRepository = documentRepository;
         this.converterToEntity = converterToEntity;
         this.requestSender = requestSender;
-        this.objectMapper = objectMapper;
     }
 
     @Override
