@@ -26,8 +26,7 @@ public class HttpRequestSenderImpl implements RequestSender {
                 .addHeader("Content-Type", "application/json")
                 .build();
 
-        Call call = httpClient.newCall(request);
-        try (Response response = call.execute()) {
+        try (Response response = httpClient.newCall(request).execute()) {
             if (response.isSuccessful() && response.body() != null) {
                 return response.body().string();
             }
