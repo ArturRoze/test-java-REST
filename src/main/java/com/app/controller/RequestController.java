@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/documents")
+@RequestMapping("documents")
 public class RequestController {
 
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
