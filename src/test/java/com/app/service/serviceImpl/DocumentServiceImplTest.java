@@ -14,6 +14,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -56,7 +57,6 @@ public class DocumentServiceImplTest {
         ObjectMapper objectMapper = new ObjectMapper();
         RequestUrl url = new RequestUrl("http://test.com");
         String stringJson = "{\"data\":[{\"id\":\"some_id\"}]}";
-        String brokeStringJson = "{\"brokeData\":[{\"id\":\"some_id\"}]}";
         when(requestSender.send(any(String.class))).thenReturn(stringJson);
 
         //action
@@ -64,5 +64,22 @@ public class DocumentServiceImplTest {
 
         //assert
         assertEquals("some_id", incomeData.getData().get(0).getId());
+    }
+
+    @Test
+    public void sendRequestFail() {
+        //arrange
+        RequestUrl url = new RequestUrl("http://test.com");
+        when(requestSender.send(any(String.class))).thenReturn("avf");
+
+        //action
+        try{
+            IncomeData incomeData = documentServiceImpl.sendRequest(url);
+        }catch (RuntimeException e){
+            return;
+        }
+
+        //assert
+        fail();
     }
 }
